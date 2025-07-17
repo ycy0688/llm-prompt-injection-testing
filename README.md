@@ -137,7 +137,7 @@ Given the potential harm of these attacks, our work calls for a more in-depth in
 We include demonstrations powered by OpenAI's publicly accessible base models and the library [LangChain](https://github.com/hwchase17/langchain) to connect these models to other applications.
 There are currently multiple types of demos:
 1. Using GPT-3 and LangChain (scenarios/gpt3langchain)
-2. Using GPT-4 and our own chat and tool implementation (scenarios/gpt4). These can be executed non-interactively using sceanrios/main.py.
+2. Using GPT-4 and our own chat and tool implementation (scenarios/gpt4). These can be executed non-interactively using scenarios/main.py.
 3. Attacks on code completion engines that need to be tried in an IDE with LLM autocompletion support (scenarios/code_completion).
 
 To use any of the OpenAI-model demos, your OpenAI API key needs to be stored in the environment variable `OPENAI_API_KEY`. You can then install the requirements and run the attack demo you want.
