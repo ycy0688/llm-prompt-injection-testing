@@ -1,9 +1,16 @@
 # Chat app implementing the latest ChatML protocol
 import os
 import openai
+from dotenv import load_dotenv
 
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# Load the environment variables
+load_dotenv()
 
+# Get the API key from environment variables
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+if not openai.api_key:
+    raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
 
 class DemoApp:
     def __init__(self, scenario):

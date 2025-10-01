@@ -1,5 +1,24 @@
 ## New: [Demonstrating Indirect Injection attacks on Bing Chat](https://greshake.github.io/)
 -------------------------
+
+## Quick Start / 快速開始
+
+### Environment Setup / 環境設置
+1. Clone this repository / 複製此存储庫
+2. Copy `.env.example` to `.env` and add your OpenAI API key / 複製 `.env.example` 為 `.env` 並添加你的 OpenAI API key
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your API key / 編輯 .env 並添加你的 API key
+   ```
+3. Install dependencies / 安裝依賴套件
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the tests / 執行測試
+   ```bash
+   python start_testing.py
+   ```
+
 ## Compromising LLMs using Indirect Prompt Injection 
 > "... a language model is a Turing-complete weird machine running programs written in natural language; when you do retrieval, you are not 'plugging updated facts into your AI', you are actually downloading random new unsigned blobs of code from the Internet (many written by adversaries) and casually executing them on your LM with full privileges. This does not end well." - [Gwern Branwen on LessWrong](https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned?commentId=AAC8jKeDp6xqsZK2K)
 
@@ -30,7 +49,7 @@ We demonstrate potentially brutal consequences of giving LLMs like ChatGPT inter
 *Connecting LLMs to other applications can have critical security implications. Even without compromising any connected applications, LLM can be the attack's target. We show how an LLM could get compromised by "looking" at a website, and how compromised LLMs can be remote-controlled or get used to exfiltrate or change user data. We demonstrate a variety of entirely new attack vectors and methods that significantly raise the stakes of deploying these models.*
 
 More insights on our findings, discussions and limitations can be found in the 
-[**Paper on ArXiv**](https://arxiv.org/abs/2302.12173) [(PDF direct link)](https://arxiv.org/pdf/2302.12173.pdf)
+[**Paper on ArXiv**](https://arxiv.org/abs/2302.12173) 
 
 ## Demonstrations
 ### Ask for Einstein, get Pirate.

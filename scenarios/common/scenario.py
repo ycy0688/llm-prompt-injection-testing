@@ -36,8 +36,8 @@ class Scenario:
             self.console.print(message)
 
     def log(self, message) -> None:
-        if self.verbose:
-            self.console.log(message)
+        # 暫時關閉 log 訊息
+        pass
 
     def run(self) -> bool:
         # Print summary, call _run(), and print result.
