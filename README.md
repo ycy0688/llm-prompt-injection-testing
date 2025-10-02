@@ -42,4 +42,4 @@ python main.py
 - 🔗 [GitHub Repository](https://github.com/greshake/llm-security)
 
 ---
-本檔案設計簡單易用，適合各種 LLM 安全測試場景，後續可依需求擴充或整合其他測試腳本。
+本設計簡單易用，適合各種 LLM 安全測試場景，後續可依需求擴充或整合其他測試腳本。
