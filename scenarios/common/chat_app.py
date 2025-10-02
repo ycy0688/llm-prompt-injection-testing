@@ -1,16 +1,12 @@
 # Chat app implementing the latest ChatML protocol
 import os
-import openai
-from dotenv import load_dotenv
-
-# Load the environment variables
-load_dotenv()
+from openai import OpenAI
 
 # Get the API key from environment variables
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-if not openai.api_key:
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
     raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
+client = OpenAI(api_key=api_key)
 
 class DemoApp:
     def __init__(self, scenario):
@@ -66,10 +62,13 @@ class ChatMLApp(DemoApp):
             "assistant: view"})
         self.messages.append({"role": role, "content": msg})
         self.scenario.log(f"{role}: {msg}")
-        response = openai.ChatCompletion.create(model=self.model, messages=self.messages)
-        content = response['choices'][0]['message']['content']
-        finish_reason = response['choices'][0]['finish_reason']
-        tokens = response['usage']['total_tokens']
+        response = client.chat.completions.create(
+            model=self.model,
+            messages=self.messages
+        )
+        content = response.choices[0].message.content
+        finish_reason = response.choices[0].finish_reason
+        # tokens = response.usage.total_tokens  # 可選，若有需要
 
         if finish_reason == "content_filter":
             raise Exception("Content filter triggered")
