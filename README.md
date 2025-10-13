@@ -33,9 +33,6 @@ python start_testing.py
   
 ## 整合於本專案的主選單腳本中的2跟3，也可以獨立執行測試：
 `demo_prompt_injection.py`用於互動測試模型是否能正確識別並拒絕提示注入攻擊。
-注意事項：
-
-- 該腳本可能會呼叫 OpenAI API，請在專案根目錄的 `.env` 檔案中設定 `OPENAI_API_KEY=your_key_here`。
 
 執行：
 ```bash
