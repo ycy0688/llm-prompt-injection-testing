@@ -35,11 +35,11 @@ python start_testing.py
 ## 整合於專案中的檔案也可以獨立執行測試：
 `demo_prompt_injection.py`用於互動測試模型是否能正確識別並拒絕提示注入攻擊。
 
-執行：
+### How to run
 ```bash
 python demo_prompt_injection.py
 ```
-
+### How to run
  `main.py` 檔案來源於開源專案 [llm-security](https://github.com/greshake/llm-security/tree/main)，此專案中提供了各種攻擊媒介和技術的示範。
 
 ```bash
