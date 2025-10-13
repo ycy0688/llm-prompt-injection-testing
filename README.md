@@ -23,19 +23,17 @@ python start_testing.py
 協助使用者快速啟動各種Prompt Injection Attack測試。
 
 ## 主要功能
-- **環境檢查**：自動檢查必要的 Python 套件與 `.env` 檔案，確保測試環境正確。
-- **主選單導覽**：以選單方式提供多種測試選項，包括：
-  
-  1. View Attack Examples：列出常見攻擊 prompt。
-  2. Interactive Testing：手動輸入 prompt 進行測試。
-  3. Integrate with Existing Framework： 與外部程式`main.py`結合。
-  4. Exit。
-  
-## 整合於本專案的主選單腳本中的2跟3，也可以獨立執行測試：
-`demo_prompt_injection.py`用於互動測試模型是否能正確識別並拒絕提示注入攻擊。
-注意事項：
+**環境檢查**：自動檢查必要的 Python 套件與 `.env` 檔案，確保測試環境正確。
 
-- 該腳本可能會呼叫 OpenAI API，請在專案根目錄的 `.env` 檔案中設定 `OPENAI_API_KEY=your_key_here`。
+**主選單導覽**：以選單方式提供多種測試選項，包括：
+  
+  - View Attack Examples：列出常見攻擊 prompt。
+  - Interactive Testing：手動輸入 prompt 進行測試。
+  - Integrate with Existing Framework： 與外部程式`main.py`結合。
+  - Exit。
+  
+## 整合於主選單腳本中的檔案也可以獨立執行測試：
+`demo_prompt_injection.py`用於互動測試模型是否能正確識別並拒絕提示注入攻擊。
 
 執行：
 ```bash
