@@ -1,21 +1,20 @@
 # Chat app implementing the latest ChatML protocol
 import os
-import openai
+from openai import OpenAI
 from dotenv import load_dotenv
 
-# Load the environment variables
+# Load environment variables from .env file
 load_dotenv()
 
 # Get the API key from environment variables
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-if not openai.api_key:
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
     raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
+client = OpenAI(api_key=api_key)
 
 class DemoApp:
     def __init__(self, scenario):
         self.scenario = scenario
-
 
 class ChatMLApp(DemoApp):
     TOOL_DESCRIPTIONS = {
@@ -66,10 +65,13 @@ class ChatMLApp(DemoApp):
             "assistant: view"})
         self.messages.append({"role": role, "content": msg})
         self.scenario.log(f"{role}: {msg}")
-        response = openai.ChatCompletion.create(model=self.model, messages=self.messages)
-        content = response['choices'][0]['message']['content']
-        finish_reason = response['choices'][0]['finish_reason']
-        tokens = response['usage']['total_tokens']
+        response = client.chat.completions.create(
+            model=self.model,
+            messages=self.messages
+        )
+        content = response.choices[0].message.content
+        finish_reason = response.choices[0].finish_reason
+        # tokens = response.usage.total_tokens  # 可選，若有需要
 
         if finish_reason == "content_filter":
             raise Exception("Content filter triggered")
@@ -81,7 +83,7 @@ class ChatMLApp(DemoApp):
         return content
 
     def ask(self, message: str) -> str:
-        self.scenario.print(message, "User")
+        # self.scenario.print(message, "User")
         response = self._prompt("user", message)
         # Check for tool use each time
         while any(response.startswith(tool) for tool in self.tools):
@@ -129,7 +131,7 @@ class ChatMLApp(DemoApp):
                         system_response = "No contacts"
             response = self._prompt("system", system_response)
 
-        self.scenario.print(response, "Assistant")
+        # self.scenario.print(response, "Assistant")
         return response
 
 

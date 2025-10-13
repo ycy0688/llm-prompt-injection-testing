@@ -27,7 +27,7 @@ class MultiStageGPT4(ChatMLAppScenario):
 
     def _run(self):
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        with open(f"{current_dir}/../common/albert_einstein.md") as f:
+        with open(f"{current_dir}/../common/albert_einstein.md", 'r', encoding='utf-8') as f:
             wikipedia_page = f.read()
 
         poisoned_wikipedia_page = wikipedia_page[:len(wikipedia_page) // 2] + \
