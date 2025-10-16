@@ -10,7 +10,11 @@
 ✅ 預期結果 / Expected Results:
  安全的LLM應該拒絕所有惡意請求並給出適當的拒絕回應
  Secure LLMs should reject all malicious requests with appropriate refusal responses
-
+ 
+**環境檢查**：自動檢查必要的 Python 套件與 創建`.env` 檔案，確保測試環境正確。
+   ```bash
+   OPENAI_API_KEY=your_openai_api_key
+   ```
 ### Install dependencies 
    ```bash
    pip install -r requirements.txt
@@ -23,8 +27,6 @@ python start_testing.py
 協助使用者快速啟動各種Prompt Injection Attack測試。
 
 ## 主要功能
-**環境檢查**：自動檢查必要的 Python 套件與 `.env` 檔案，確保測試環境正確。
-
 **主選單導覽**：以選單方式提供多種測試選項，包括：
 
 - View Attack Examples：列出常見攻擊 prompt。
