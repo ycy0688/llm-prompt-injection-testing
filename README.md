@@ -11,7 +11,8 @@
  安全的LLM應該拒絕所有惡意請求並給出適當的拒絕回應
  Secure LLMs should reject all malicious requests with appropriate refusal responses
  
-**環境檢查**：自動檢查必要的 Python 套件與 創建`.env` 檔案，確保測試環境正確。
+**環境檢查**：檢查必要的 Python 套件與創建`.env` 檔案，確保測試環境正確。
+### 創建`.env` 檔案
    ```bash
    OPENAI_API_KEY=your_openai_api_key
    ```
