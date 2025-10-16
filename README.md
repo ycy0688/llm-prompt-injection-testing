@@ -12,7 +12,7 @@
  Secure LLMs should reject all malicious requests with appropriate refusal responses
  
 **環境檢查**：檢查必要的 Python 套件與創建`.env` 檔案，確保測試環境正確。
-### 創建`.env` 檔案
+### Create a `.env` file 
    ```bash
    OPENAI_API_KEY=your_openai_api_key
    ```
